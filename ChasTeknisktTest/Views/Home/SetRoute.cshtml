@@ -3,6 +3,14 @@
     ViewBag.Title = "Chas Tekniskt Test";
 }
 
+@section scripts{
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAB0W09vPwzeHmi9sNsUUL9ATZfFoRWwgQ">
+    </script>
+@*<script src="https://maps.googleapis.com/maps/api/distancematrix/json??libraries=places&key=AIzaSyAB0W09vPwzeHmi9sNsUUL9ATZfFoRWwgQ">
+    </script>*@
+    <script src="~/Scripts/DIstanceBeweenTwoPoints.js"></script>
+}
+
 <div>
     <h1>Chas Tekniskt Test</h1>
 </div>
@@ -13,11 +21,11 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label for="text">From:</label>
-            @Html.TextBoxFor(m => m.Start)
+            @Html.TextBoxFor(m => m.Start, new { id = "Start" })
         </div>
         <div class="form-group">
             <label for="text">To:</label>
-            @Html.TextBoxFor(m => m.End)
+            @Html.TextBoxFor(m => m.End, new { id = "End" })
         </div>
         <input type="submit" value="Submit" />
     </div>
@@ -25,10 +33,14 @@
 
 @*Visar en karta som specificeras i propertyn 'Src' i Route-modellen*@
 <div class="col-lg-6">
-    <iframe width="600"
-            height="450"
-            frameborder="0" style="border:0"
-            src=@Model.Src allowfullscreen></iframe>
+    <div class="col-lg-6">
+        <iframe width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src=@Model.Src allowfullscreen></iframe>
+    </div>
+    @*<div id="Map"></div>*@
+    <div id="Distance"></div>
 </div>
 
 @*Visar en random katt-bild från ett katt-API*@
