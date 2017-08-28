@@ -1,0 +1,37 @@
+﻿@model ChasTeknisktTest.Models.Route
+@{
+    ViewBag.Title = "Chas Tekniskt Test";
+}
+
+<div>
+    <h1>Chas Tekniskt Test</h1>
+</div>
+
+@*Tar emot input från användaren och skickar sedan iväg en POST till Home/SetRoute*@
+@using (Html.BeginForm("SetRoute", "Home", FormMethod.Post))
+{
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="text">From:</label>
+            @Html.TextBoxFor(m => m.Start)
+        </div>
+        <div class="form-group">
+            <label for="text">To:</label>
+            @Html.TextBoxFor(m => m.End)
+        </div>
+        <input type="submit" value="Submit" />
+    </div>
+}
+
+@*Visar en karta som specificeras i propertyn 'Src' i Route-modellen*@
+<div class="col-lg-6">
+    <iframe width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src=@Model.Src allowfullscreen></iframe>
+</div>
+
+@*Visar en random katt-bild från ett katt-API*@
+<div>
+    <img src="http://thecatapi.com/api/images/get?format=src&results_per_page=1" />
+</div>

@@ -1,0 +1,42 @@
+﻿@model ChasTeknisktTest.Models.Route
+@{
+    ViewBag.Title = "Chas Tekniskt Test";
+}
+
+<div>
+    <h1>Chas Tekniskt Test</h1>
+</div>
+
+using (@Html.BeginForm("SetRoute", "Home", FormMethod.Post))
+{
+<div class="col-lg-6">
+    <form @*action="@Url.Action("SetRoute", "HomeController")" method="POST"*@>
+        @*<div class="form-group">*@
+            @*<label for="text">From:</label>*@
+            @*<input type="text" class="form-control" id="start" name="Start">*@
+            @*@Html.TextBoxFor(m => m.Start)*@
+            @*@Html.TextBox("Start");*@
+        @*</div>*@
+        @*<div class="form-group">*@
+            @*<label for="text">To:</label>*@
+            @*<input type="text" class="form-control" id="end" name="End">*@
+            @*@Html.TextBoxFor(m => m.End)*@
+            @*@Html.TextBox("End");*@
+        @*</div>*@
+        @*<input type="submit" value="Submit" />*@
+        @*<button type="submit" class="btn btn-default">Submit</button>*@
+        <h1>TEST</h1>
+    </form>
+</div>
+}
+
+<div class="col-lg-6">
+    <iframe width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src=@Model.Src allowfullscreen></iframe>
+</div>
+
+<div>
+    <img src="http://thecatapi.com/api/images/get?format=src&results_per_page=1" />
+</div>
