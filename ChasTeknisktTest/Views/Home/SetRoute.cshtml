@@ -4,11 +4,11 @@
 }
 
 @section scripts{
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAB0W09vPwzeHmi9sNsUUL9ATZfFoRWwgQ">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC4b6l3_xiWijsCCFSnMJ0HahC1Sw8S6Dc">
     </script>
-@*<script src="https://maps.googleapis.com/maps/api/distancematrix/json??libraries=places&key=AIzaSyAB0W09vPwzeHmi9sNsUUL9ATZfFoRWwgQ">
-    </script>*@
-    <script src="~/Scripts/DIstanceBeweenTwoPoints.js"></script>
+    <script type="text/javascript" src="~/Scripts/DIstanceBeweenTwoPoints.js"></script>
+    @*<script src="https://maps.googleapis.com/maps/api/distancematrix/json??libraries=places&key=AIzaSyAB0W09vPwzeHmi9sNsUUL9ATZfFoRWwgQ">
+        </script>*@
 }
 
 <div>
@@ -39,7 +39,10 @@
                 frameborder="0" style="border:0"
                 src=@Model.Src allowfullscreen></iframe>
     </div>
-    @*<div id="Map"></div>*@
+</div>
+
+@*Visar sträckan samt den tid det kommer ta att färdas från Start till End*@
+<div class="col-lg-6">
     <div id="Distance"></div>
 </div>
 
