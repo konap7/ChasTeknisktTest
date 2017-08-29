@@ -21,7 +21,6 @@ function callback(response, status) {
         var distance = response.rows[0].elements[0].distance.text;
         var duration = response.rows[0].elements[0].duration.value;
         var dvDistance = document.getElementById("Distance");
-        //duration = parseFloat(duration / 3600).toFixed(2);
         var hours = Math.floor(duration / 3600);
         duration %= 3600;
         var minutes = Math.floor(duration / 60);
